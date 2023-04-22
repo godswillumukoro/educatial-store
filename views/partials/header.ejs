@@ -26,8 +26,10 @@
     <div class="bg_overlay_header">
         <div id="particles-bg"></div>
         <div class="cloud-bg"></div>
-        <div class="bg-img-header-new-moon">&nbsp;</div>
-        <span class="header-shapes shape-03"></span>
+        <% if (locals.headerImage) { %>
+            <div class="bg-img-header-new-moon">&nbsp;</div>
+            <% } %>
+                <span class="header-shapes shape-03"></span>
     </div>
 
     <nav id="coodiv-navbar-header" class="navbar navbar-expand-md fixed-header-layout">
@@ -46,8 +48,8 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item megamenu dropdown"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="/shared-hosting" role="button" id="header-help-drop-down"
-                            aria-haspopup="true" aria-expanded="false">Shared Plans<span
+                        <a class="nav-link" href="/shared-hosting"  role="button"
+                            id="header-help-drop-down" aria-haspopup="true" aria-expanded="false">Shared Plans<span
                                 class="sr-only">(current)</span></a>
                         <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
                             aria-labelledby="header-help-drop-down">
@@ -59,7 +61,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="/domain-names" role="button" id="header-help-drop-down"
+                        <a class="nav-link" href="/domain-names"  role="button" id="header-help-drop-down"
                             aria-haspopup="true" aria-expanded="false">Domain Names<span
                                 class="sr-only">(current)</span></a>
                         <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
@@ -73,7 +75,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="/vps-hosting" role="button" id="header-help-drop-down"
+                        <a class="nav-link" href="/vps-hosting"  role="button" id="header-help-drop-down"
                             aria-haspopup="true" aria-expanded="false">VPS Hosting<span
                                 class="sr-only">(current)</span></a>
                         <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
@@ -88,7 +90,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="/dedicated-hosting" role="button" id="header-help-drop-down"
+                        <a class="nav-link" href="/dedicated-hosting"  role="button" id="header-help-drop-down"
                             aria-haspopup="true" aria-expanded="false">Dedicated Hosting<span
                                 class="sr-only">(current)</span></a>
                         <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
@@ -102,7 +104,7 @@
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link" href="/data-center" role="button" id="header-help-drop-down"
+                        <a class="nav-link" href="/data-center"  role="button" id="header-help-drop-down"
                             aria-haspopup="true" aria-expanded="false">Data Centers<span
                                 class="sr-only">(current)</span></a>
                         <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
@@ -120,7 +122,7 @@
             </div>
             <ul class="header-user-info-coodiv">
                 <li class="dropdown">
-                    <a role="button" id="header-login-dropdown" data-toggle="dropdown" aria-haspopup="true"
+                    <a role="button" id="header-login-dropdown"  aria-haspopup="true"
                         aria-expanded="false" href="#">sign in</a>
 
                     <div class="dropdown-menu coodiv-dropdown-header user-login-dropdown"
