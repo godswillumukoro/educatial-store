@@ -1,507 +1,468 @@
 <!DOCTYPE html>
 <html lang="en">
 <% let srcText=null %>
-    <% if (locals.openVZVpsHosting) { srcText=locals.openVZVpsHosting } %>
-        <% if (locals.kvmVpsHosting) { srcText=locals.kvmVpsHosting } %>
-            <% if (locals.vpsHostingAu) { srcText=locals.vpsHostingAu } %>
-                <% if (locals.vpsHostingUk) { srcText=locals.vpsHostingUk } %>
-                    <% if (locals.vpsHostingUs) { srcText=locals.vpsHostingUs } %>
+    <% if (locals.dedicatedSemi) { srcText=locals.dedicatedSemi } %>
+    <% if (locals.dedicatedUs) { srcText=locals.dedicatedUs } %>
 
-                        <%- include('../partials/head'); %>
+        <%- include('../partials/head'); %>
 
-                            <body>
+            <body>
 
-                                <%- include('../partials/header'); %>
+                <%- include('../partials/header'); %>
 
-                                    <section class="pb-2 position-relative">
-                                        <div class="container">
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <br>
-                                            <br>
+                    <section class="pb-2 position-relative">
+                        <div class="container">
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
 
-                                            <div class="tab-content" id="homepageservicesContent">
-                                                <div class="tab-pane fade show active" id="hosting" role="tabpanel"
-                                                    aria-labelledby="hosting-tab">
-                                                    <h5 class="title-default-coodiv-two">
-                                                        <%= locals.title %> Virtual Private Servers
-                                                            <span>Our virtual private servers feature copious CPU usage
-                                                                and RAM quotas</span>
-                                                    </h5>
+                            <div class="tab-content" id="homepageservicesContent">
+                                <div class="tab-pane fade show active" id="hosting" role="tabpanel"
+                                    aria-labelledby="hosting-tab">
+                                    <h5 class="title-default-coodiv-two">
+                                        <%= locals.title %>
 
-                                                    <!-- <div class="row justify-content-center">
-                            <div id="monthly-yearly-chenge" class="mr-tp-40 style-two">
-                                <a class="active monthly-price"> <span class="change-box-text">billed monthly</span>
-                                    <span class="change-box"></span></a>
-                                <a class="yearli-price"> <span class="change-box-text">billed annually</span></a>
-                            </div>
-                        </div> -->
+                                    </h5>
 
-                                                    <div
-                                                        class="row justify-content-start second-pricing-table-container mr-tp-30">
+                                    <div class="row justify-content-start second-pricing-table-container mr-tp-30">
 
-                                                        <% if (srcText) { %>
-                                                            <% srcText.table.forEach(column=> { %>
-                                                                <div class="col-md-4 px-0">
-                                                                    <div class="second-pricing-table">
-                                                                        <h5 class="second-pricing-table-title">
-                                                                            <%= column.title %>
-                                                                        </h5>
-                                                                        <p style="text-align: start;">
-                                                                            <%= column.subtitle %>
-                                                                        </p>
-                                                                        <span
-                                                                            class="second-pricing-table-price monthly">
-                                                                            <i class="monthly">$<%= column.price %>
-                                                                                    <small>/mo</small></i>
-                                                                            <!-- <i class="yearly">$9.99<small>/year</small></i> -->
-                                                                        </span>
+                                        <% if (srcText) { %>
+                                            <% srcText.table.forEach(column=> { %>
+                                                <div class="col-md-4 px-0">
+                                                    <div class="second-pricing-table">
+                                                        <h5 class="second-pricing-table-title">
+                                                            <%= column.title %>
+                                                        </h5>
+                                                        <p style="text-align: start;">
+                                                            <%= column.subtitle %>
+                                                        </p>
+                                                        <span class="second-pricing-table-price monthly">
+                                                            <i class="monthly">$<%= column.price %>
+                                                                    <small>/mo</small></i>
+                                                            <!-- <i class="yearly">$9.99<small>/year</small></i> -->
+                                                        </span>
 
-                                                                        <ul class="second-pricing-table-body">
-                                                                            <li><strong>
-                                                                                    <%= column.core %>
-                                                                                </strong> Core</li>
-                                                                            <li><strong>
-                                                                                    <%= column.ram %>
-                                                                                </strong> RAM</li>
-                                                                            <% if (column.storage) { %>
+                                                        <ul class="second-pricing-table-body">
+
+                                                            <% if (column.storage) { %>
+                                                                <li><strong>
+                                                                        <%= column.storage %>
+                                                                    </strong> Storage</li>
+                                                                <% } %>
+                                                                    <% if (column.data) { %>
+                                                                        <li><strong>
+                                                                                <%= column.data %>
+                                                                            </strong> Bandwidth</li>
+                                                                        <% } %>
+                                                                            <% if (column.hosting) { %>
                                                                                 <li><strong>
-                                                                                        <%= column.storage %>
-                                                                                    </strong> Data Storage</li>
+                                                                                        <%= column.hosting %>
+                                                                                    </strong> Website hosting</li>
                                                                                 <% } %>
-                                                                                    <% if (column.data) { %>
-                                                                                        <li><strong>
-                                                                                                <%= column.data %>
-                                                                                            </strong> Data Transfer</li>
-                                                                                        <% } %>
-                                                                                            <li><strong>Full</strong>
-                                                                                                Root Access</li>
-                                                                        </ul>
+                                                                                    <li><strong>30-Day</strong>
+                                                                                        Free Trial</li>
+                                                        </ul>
 
-                                                                        <a class="second-pricing-table-button"
-                                                                            href="/order-now">Order VPS</a>
-                                                                    </div>
-                                                                </div>
-                                                                <% })} %>
-                                                    </div>
-
-                                                </div>
-
-                                                <div class="tab-pane fade" id="vps" role="tabpanel"
-                                                    aria-labelledby="vps-tab">
-                                                    <h5 class="title-default-coodiv-two">Effortlessly get the power and
-                                                        flexibility you
-                                                        need.<span>Total
-                                                            control with full root access and optional control
-                                                            panels.</span></h5>
-
-                                                    <div class="table-responsive mt-15">
-                                                        <table id="prices">
-                                                            <thead id="theadHide">
-                                                                <tr class="price-dsc" id="toDisapear">
-                                                                    <th class="features banner">
-                                                                        <div class="banner-servers-box">
-                                                                            <div class="banner-text-left">
-                                                                                <h5>our server is<strong>24%
-                                                                                        faster</strong></h5>
-                                                                                <p>with under 60 seconds worldwide
-                                                                                    Deploy!</p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </th>
-                                                                    <th class="checklist left">
-                                                                        <p>
-                                                                            Shoutcast Server
-                                                                            <span class="soft-type">Freemium</span>
-                                                                            <span class="price"><span
-                                                                                    class="currency currencytags">$</span>1.99</span>
-                                                                        </p>
-
-                                                                        <div class="call-to-action">
-                                                                            <a>per month</a>
-                                                                            <a class="btn-empty" href="/order-now"
-                                                                                target="_blank">Get
-                                                                                started</a>
-                                                                        </div>
-                                                                    </th>
-                                                                    <th class="checklist left">
-                                                                        <p>
-                                                                            Shoutcast Server
-                                                                            <span class="soft-type">Business</span>
-                                                                            <span class="price"><span
-                                                                                    class="currency currencytags">$</span>13</span>
-                                                                        </p>
-
-                                                                        <div class="call-to-action">
-                                                                            <a>per month</a>
-                                                                            <a class="btn-empty" href="/order-now"
-                                                                                target="_blank">Get
-                                                                                started</a>
-                                                                        </div>
-                                                                    </th>
-                                                                    <th class="checklist left">
-                                                                        <p>
-                                                                            Shoutcast Server
-                                                                            <span class="soft-type">Enterprise</span>
-                                                                            <span class="price"><span
-                                                                                    class="currency currencytags">$</span>44</span>
-                                                                        </p>
-
-                                                                        <div class="call-to-action">
-                                                                            <a>per month</a>
-                                                                            <a class="btn-empty" href="/order-now"
-                                                                                target="_blank">Get
-                                                                                started</a>
-                                                                        </div>
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="features-body">
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Compatible With Any
-                                                                            Encoder</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Unlimited Stations</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Live Broadcasting</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Unlimited Simultaneous
-                                                                            Listeners</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">MP3&amp;AAC Format Supported
-                                                                        </span>
-                                                                        <span class="remark">(up to 320kbps)</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Limited MP3 128kbps</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Scalability</span>
-                                                                        <span class="remark">(Support up to 12,000
-                                                                            unique listeners)</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="no"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Not applicable</span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Shoutcast Automation
-                                                                            System</span>
-                                                                        <span class="remark">(Planner)</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Not applicable</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Not applicable</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Support Backup URL</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="no"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Not applicable</span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">SSL Support</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Personal &amp; Customisable SSL
-                                                                            Certificate</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="yes"></span>
-                                                                    </td>
-                                                                </tr>
-                                                                <tr class="feature">
-                                                                    <td class="feature">
-                                                                        <span class="name">Vanity URL</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Not applicable</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span>Not applicable</span>
-                                                                    </td>
-                                                                    <td>
-                                                                        <span class="no"></span>
-                                                                    </td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
+                                                        <a class="second-pricing-table-button" href="/order-now">Create
+                                                            an account</a>
                                                     </div>
                                                 </div>
-                                                <div class="tab-pane fade" id="emails" role="tabpanel"
-                                                    aria-labelledby="emails-tab">
-                                                    <h5 class="title-default-coodiv-two">Your business will look better
-                                                        than ever.<span>Earn
-                                                            your
-                                                            customers' trust with a professional email address that
-                                                            matches your business
-                                                            name.</span>
-                                                    </h5>
+                                                <% })} %>
+                                    </div>
 
-                                                    <div class="row justify-content-start mt-15">
-                                                        <div class="col-md-4 plan-ssl-special">
-                                                            <h5 class="res-titl">Individual <span>Ideal for getting your
-                                                                    business up and
-                                                                    running.</span>
-                                                            </h5>
-                                                            <span class="res-price"><i>$</i>0.00 <small>per
-                                                                    user/mo</small></span>
-                                                            <span class="plan-discount">With an annual term (60%
-                                                                savings)</span>
-                                                            <span class="res-sub-text">basic encryption <img
-                                                                    src="img/demo/ssl.png" alt /></span>
+                                </div>
 
-                                                            <div class="body-ress-v2">
-                                                                <p><b>FREE</b> Email that matches your domain</p>
-                                                                <p>256MB <b> of email storage</b></p>
-                                                                <p><b>Mobile-friendly</b> webmail</p>
-                                                                <p>
-                                                                    <s>Unlimited <b>Premium SSLs</b></s>
-                                                                </p>
-                                                                <p><s>Share calendars and contacts with your team</s>
-                                                                </p>
-                                                                <p><s>Works with the email app of your choice</s></p>
-                                                                <p><s>Assign tasks to your team members</s></p>
-                                                                <p>
-                                                                    <s><b>DDOS & spam</b> Protection</s>
-                                                                </p>
+                                <div class="tab-pane fade" id="vps" role="tabpanel" aria-labelledby="vps-tab">
+                                    <h5 class="title-default-coodiv-two">Effortlessly get the power and
+                                        flexibility you
+                                        need.<span>Total
+                                            control with full root access and optional control
+                                            panels.</span></h5>
 
-                                                                <p><a class="ress-install-btn" href="/order-now">Get
-                                                                        started</a></p>
+                                    <div class="table-responsive mt-15">
+                                        <table id="prices">
+                                            <thead id="theadHide">
+                                                <tr class="price-dsc" id="toDisapear">
+                                                    <th class="features banner">
+                                                        <div class="banner-servers-box">
+                                                            <div class="banner-text-left">
+                                                                <h5>our server is<strong>24%
+                                                                        faster</strong></h5>
+                                                                <p>with under 60 seconds worldwide
+                                                                    Deploy!</p>
                                                             </div>
                                                         </div>
+                                                    </th>
+                                                    <th class="checklist left">
+                                                        <p>
+                                                            Shoutcast Server
+                                                            <span class="soft-type">Freemium</span>
+                                                            <span class="price"><span
+                                                                    class="currency currencytags">$</span>1.99</span>
+                                                        </p>
 
-                                                        <div class="col-md-4 plan-ssl-special">
-                                                            <h5 class="res-titl">Team <span>Great for collaboration with
-                                                                    everyone on your
-                                                                    team..</span>
-                                                            </h5>
-                                                            <span class="res-price"><i>$</i>1.33 <small>per
-                                                                    user/mo</small></span>
-                                                            <span class="plan-discount">With an annual term (60%
-                                                                savings)</span>
-                                                            <span class="res-sub-text">advanced encryption <img
-                                                                    src="img/demo/ssl.png" alt /></span>
-
-                                                            <div class="body-ress-v2">
-                                                                <p><b>FREE</b> Email that matches your domain</p>
-                                                                <p>5GB <b> of email storage</b></p>
-                                                                <p><b>Mobile-friendly</b> webmail</p>
-                                                                <p>Unlimited <b>Premium SSLs</b></p>
-                                                                <p>Share calendars and contacts with your team</p>
-                                                                <p><s>Works with the email app of your choice</s></p>
-                                                                <p><s>Assign tasks to your team members</s></p>
-                                                                <p>
-                                                                    <s><b>DDOS & spam</b> Protection</s>
-                                                                </p>
-
-                                                                <p><a class="ress-buy-btn" href="#">buy</a></p>
-                                                            </div>
+                                                        <div class="call-to-action">
+                                                            <a>per month</a>
+                                                            <a class="btn-empty" href="/order-now" target="_blank">Get
+                                                                started</a>
                                                         </div>
+                                                    </th>
+                                                    <th class="checklist left">
+                                                        <p>
+                                                            Shoutcast Server
+                                                            <span class="soft-type">Business</span>
+                                                            <span class="price"><span
+                                                                    class="currency currencytags">$</span>13</span>
+                                                        </p>
 
-                                                        <div class="col-md-4 plan-ssl-special">
-                                                            <h5 class="res-titl">Individual <span>Ideal for getting your
-                                                                    business up and
-                                                                    running.</span>
-                                                            </h5>
-                                                            <span class="res-price"><i>$</i>4.99 <small>per
-                                                                    user/mo</small></span>
-                                                            <span class="plan-discount">With an annual term (60%
-                                                                savings)</span>
-                                                            <span class="res-sub-text">best encryption <img
-                                                                    src="img/demo/ssls.png" alt /></span>
-
-                                                            <div class="body-ress-v2">
-                                                                <p><b>FREE</b> Email that matches your domain</p>
-                                                                <p>UNLIMITED <b> email storage</b></p>
-                                                                <p><b>Mobile-friendly</b> webmail</p>
-                                                                <p>Unlimited <b>Premium SSLs</b></p>
-                                                                <p>Share calendars and contacts with your team</p>
-                                                                <p>Works with the email app of your choice</p>
-                                                                <p>Assign tasks to your team members</p>
-                                                                <p><b>DDOS & spam</b> Protection</p>
-
-                                                                <p><a class="ress-buy-btn" href="#">buy</a></p>
-                                                            </div>
+                                                        <div class="call-to-action">
+                                                            <a>per month</a>
+                                                            <a class="btn-empty" href="/order-now" target="_blank">Get
+                                                                started</a>
                                                         </div>
-                                                    </div>
-                                                </div>
+                                                    </th>
+                                                    <th class="checklist left">
+                                                        <p>
+                                                            Shoutcast Server
+                                                            <span class="soft-type">Enterprise</span>
+                                                            <span class="price"><span
+                                                                    class="currency currencytags">$</span>44</span>
+                                                        </p>
+
+                                                        <div class="call-to-action">
+                                                            <a>per month</a>
+                                                            <a class="btn-empty" href="/order-now" target="_blank">Get
+                                                                started</a>
+                                                        </div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="features-body">
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Compatible With Any
+                                                            Encoder</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Unlimited Stations</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Live Broadcasting</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Unlimited Simultaneous
+                                                            Listeners</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">MP3&amp;AAC Format Supported
+                                                        </span>
+                                                        <span class="remark">(up to 320kbps)</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Limited MP3 128kbps</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Scalability</span>
+                                                        <span class="remark">(Support up to 12,000
+                                                            unique listeners)</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="no"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Not applicable</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Shoutcast Automation
+                                                            System</span>
+                                                        <span class="remark">(Planner)</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Not applicable</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Not applicable</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Support Backup URL</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="no"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Not applicable</span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">SSL Support</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Personal &amp; Customisable SSL
+                                                            Certificate</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="yes"></span>
+                                                    </td>
+                                                </tr>
+                                                <tr class="feature">
+                                                    <td class="feature">
+                                                        <span class="name">Vanity URL</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Not applicable</span>
+                                                    </td>
+                                                    <td>
+                                                        <span>Not applicable</span>
+                                                    </td>
+                                                    <td>
+                                                        <span class="no"></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="emails" role="tabpanel" aria-labelledby="emails-tab">
+                                    <h5 class="title-default-coodiv-two">Your business will look better
+                                        than ever.<span>Earn
+                                            your
+                                            customers' trust with a professional email address that
+                                            matches your business
+                                            name.</span>
+                                    </h5>
+
+                                    <div class="row justify-content-start mt-15">
+                                        <div class="col-md-4 plan-ssl-special">
+                                            <h5 class="res-titl">Individual <span>Ideal for getting your
+                                                    business up and
+                                                    running.</span>
+                                            </h5>
+                                            <span class="res-price"><i>$</i>0.00 <small>per
+                                                    user/mo</small></span>
+                                            <span class="plan-discount">With an annual term (60%
+                                                savings)</span>
+                                            <span class="res-sub-text">basic encryption <img src="img/demo/ssl.png"
+                                                    alt /></span>
+
+                                            <div class="body-ress-v2">
+                                                <p><b>FREE</b> Email that matches your domain</p>
+                                                <p>256MB <b> of email storage</b></p>
+                                                <p><b>Mobile-friendly</b> webmail</p>
+                                                <p>
+                                                    <s>Unlimited <b>Premium SSLs</b></s>
+                                                </p>
+                                                <p><s>Share calendars and contacts with your team</s>
+                                                </p>
+                                                <p><s>Works with the email app of your choice</s></p>
+                                                <p><s>Assign tasks to your team members</s></p>
+                                                <p>
+                                                    <s><b>DDOS & spam</b> Protection</s>
+                                                </p>
+
+                                                <p><a class="ress-install-btn" href="/order-now">Get
+                                                        started</a></p>
                                             </div>
                                         </div>
 
-                                    </section>
+                                        <div class="col-md-4 plan-ssl-special">
+                                            <h5 class="res-titl">Team <span>Great for collaboration with
+                                                    everyone on your
+                                                    team..</span>
+                                            </h5>
+                                            <span class="res-price"><i>$</i>1.33 <small>per
+                                                    user/mo</small></span>
+                                            <span class="plan-discount">With an annual term (60%
+                                                savings)</span>
+                                            <span class="res-sub-text">advanced encryption <img src="img/demo/ssl.png"
+                                                    alt /></span>
 
+                                            <div class="body-ress-v2">
+                                                <p><b>FREE</b> Email that matches your domain</p>
+                                                <p>5GB <b> of email storage</b></p>
+                                                <p><b>Mobile-friendly</b> webmail</p>
+                                                <p>Unlimited <b>Premium SSLs</b></p>
+                                                <p>Share calendars and contacts with your team</p>
+                                                <p><s>Works with the email app of your choice</s></p>
+                                                <p><s>Assign tasks to your team members</s></p>
+                                                <p>
+                                                    <s><b>DDOS & spam</b> Protection</s>
+                                                </p>
 
-                                    <section class="py-20">
-                                        <div class="container">
+                                                <p><a class="ress-buy-btn" href="#">buy</a></p>
+                                            </div>
+                                        </div>
 
-                                            <!-- <div class="row justify-content-start">
-                        <div class="col-md-8 col-12">
-                            <div class="title-default-coodiv-four">
-                                <h5 class="coodiv-text-4 font-weight-bold">About OpenVZ Virtual Private Servers</h5>
-                                <p>Our OpenVZ virtual private servers feature copious CPU usage and RAM quotas, as well
-                                    as a ninety-nine point nine percent network uptime guarantee. A 24/7/365 client
-                                    support service is available as well. Each virtual private servers plan offers full
-                                    root access as well as tons of free-of-charge bonuses.</p>
-                                <p>You can get an OpenVZ virtual server for just $6.00 a month. You can use our
-                                    free-of-cost Hepsia hosting CP, which will allow you to host an unmetered number of
-                                    domain names. A website installation tool, a sitemap generator and an .htaccess
-                                    generator are just a few of the practical tools that we have incorporated in our web
-                                    hosting Control Panel.</p>
+                                        <div class="col-md-4 plan-ssl-special">
+                                            <h5 class="res-titl">Individual <span>Ideal for getting your
+                                                    business up and
+                                                    running.</span>
+                                            </h5>
+                                            <span class="res-price"><i>$</i>4.99 <small>per
+                                                    user/mo</small></span>
+                                            <span class="plan-discount">With an annual term (60%
+                                                savings)</span>
+                                            <span class="res-sub-text">best encryption <img src="img/demo/ssls.png"
+                                                    alt /></span>
+
+                                            <div class="body-ress-v2">
+                                                <p><b>FREE</b> Email that matches your domain</p>
+                                                <p>UNLIMITED <b> email storage</b></p>
+                                                <p><b>Mobile-friendly</b> webmail</p>
+                                                <p>Unlimited <b>Premium SSLs</b></p>
+                                                <p>Share calendars and contacts with your team</p>
+                                                <p>Works with the email app of your choice</p>
+                                                <p>Assign tasks to your team members</p>
+                                                <p><b>DDOS & spam</b> Protection</p>
+
+                                                <p><a class="ress-buy-btn" href="#">buy</a></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div> -->
 
-                                            <% if (locals.gridSection) {%>
-                                                <div class="row justify-content-center mt-15">
-                                                    <% srcText.gridSection.forEach(section=> { %>
-                                                        <div class="col-md-6 col-12">
-                                                            <div class="lead-notes-box">
-                                                                <h5 class="coodiv-text-8 font-weight-bold">
-                                                                    <%= section.title %>
-                                                                </h5>
-                                                                <p class="coodiv-text-10 mb-0">
-                                                                    <%= section.content %>
-                                                                </p>
-                                                                <!-- <br>
-                                    <a href="https://demo.educatial.store/login/" class="text-center"
-                                        style="color: #2fd5c9;">View demo ></a> -->
-                                                            </div>
-                                                        </div>
-                                                        <% }) %>
-                                                </div>
-                                                <% } %>
-
-                                                    <% if(locals.content) { %>
-                                                        <main class="py-25 bg-default-2">
-                                                            <div class="container">
-
-                                                                <div class="row justify-content-start">
-                                                                    <div class="col-md-8 col-12">
-                                                                        <div class="">
-                                                                            <p style="color: #079d63;"
-                                                                                class="eyebrow content-text-author_eyebrow">
-                                                                                VPS Hosting
-                                                                            </p>
-                                                                            <h5 class="coodiv-text-5 font-weight-bold">
-                                                                                <%= content.heading %>
-                                                                            </h5>
-                                                                            <p>
-                                                                                <%= content.paragraph %>
-                                                                            </p>
-                                                                            <a class="second-pricing-table-button text-center"
-                                                                                href="/order-now">Get started now</a>
-
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-
-                                                            </div>
-                                                        </main>
-                                                        <% } %>
-
-                                                            <section class="pt-20">
-                                                                <div class="container">
-
-                                                                    <div class="cta-row-careers">
-                                                                        <div class="cta-row-careers_container">
-                                                                            <h3>Need a self-managed VPS?</h3>
-                                                                            <a href="/order-now" tabindex="0">Get
-                                                                                started</a>
-                                                                        </div>
-                                                                    </div>
+                    </section>
 
 
-                                                                </div>
-                                                            </section>
+                    <section class="py-20">
+                        <div class="container">
 
+                            <% if (locals.gridSection) {%>
+                                <div class="row justify-content-center mt-15">
+                                    <% srcText.gridSection.forEach(section=> { %>
+                                        <div class="col-md-6 col-12">
+                                            <div class="lead-notes-box">
+                                                <h5 class="coodiv-text-8 font-weight-bold">
+                                                    <%= section.title %>
+                                                </h5>
+                                                <p class="coodiv-text-10 mb-0">
+                                                    <%= section.content %>
+                                                </p>
+                                            </div>
                                         </div>
-                                    </section>
-                                    <%- include('../partials/footer') %>
-                            </body>
+                                        <% }) %>
+                                </div>
+                                <% } %>
+
+                                    <% if(locals.content) { %>
+                                        <main class="py-25 bg-default-2">
+                                            <div class="container">
+
+                                                <div class="row justify-content-start">
+                                                    <div class="col-md-8 col-12">
+                                                        <div class="">
+                                                            <p style="color: #079d63;"
+                                                                class="eyebrow content-text-author_eyebrow">
+                                                                VPS Hosting
+                                                            </p>
+                                                            <h5 class="coodiv-text-5 font-weight-bold">
+                                                                <%= content.heading %>
+                                                            </h5>
+                                                            <p>
+                                                                <%= content.paragraph %>
+                                                            </p>
+                                                            <a class="second-pricing-table-button text-center"
+                                                                href="/order-now">Get started now</a>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </main>
+                                        <% } %>
+
+                                            <section class="pt-20">
+                                                <div class="container">
+
+                                                    <div class="cta-row-careers">
+                                                        <div class="cta-row-careers_container">
+                                                            <h3>Need a Dedicated Hosting Server?</h3>
+                                                            <a href="/order-now" tabindex="0">Get
+                                                                started</a>
+                                                        </div>
+                                                    </div>
+
+
+                                                </div>
+                                            </section>
+
+                        </div>
+                    </section>
+                    <%- include('../partials/footer') %>
+            </body>
 
 </html>

@@ -7,9 +7,9 @@ const { kvmVpsHosting } = require('./views/text/vps/kvmVpsHosting')
 const { vpsHostingAu } = require('./views/text/vps/vpsHostingAu')
 const { vpsHostingUk } = require('./views/text/vps/vpsHostingUk')
 const { vpsHostingUs } = require('./views/text/vps/vpsHostingUs')
-const {dedicatedIndex} = require('./views/text/dedicated/dedicatedIndex')
-const {dedicatedSemi} = require('./views/text/dedicated/dedicatedSemi')
-const {dedicatedUs} = require('./views/text/dedicated/dedicatedUs')
+const { dedicatedIndex } = require('./views/text/dedicated/dedicatedIndex')
+const { dedicatedSemi } = require('./views/text/dedicated/dedicatedSemi')
+const { dedicatedUs } = require('./views/text/dedicated/dedicatedUs')
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
@@ -112,10 +112,15 @@ app.get("/dedicated-hosting", (req, res) => {
   res.render("pages/dedicated", { title: "Dedicated Hosting", dedicatedIndex });
 });
 app.get("/semi-dedicated-hosting", (req, res) => {
-  res.render("pages/dedicated", { title: "Semi-Dedicated Hosting", dedicatedSemi });
+  res.render("pages/dedicated-reseller-options", { title: "Semi-Dedicated Hosting", gridSection: true, dedicatedSemi });
 });
 app.get("/dedicated-hosting-US", (req, res) => {
-  res.render("pages/dedicated", { title: "Dedicated Hosting US", dedicatedUs });
+  const content =
+  {
+    heading: `Dedicated Servers Hosting in US`,
+    paragraph: `With a dedicated servers hosting, you can fix any website performance-connected problems. Picking a reliable US-based datacenter for your US-oriented websites is essential for reaching greater performance levels. This is the reason why we work with a state-of-the-art data center facility located in downtown Chicago, IL. This cooperation ensures that all our dedicated server customers will enjoy much faster web page loading speeds. Our dedicated servers plans come with a cost-free hosting CP, a bouquet of Linux distributions and numerous value-added extras.`
+  }
+  res.render("pages/dedicated-reseller-options", { title: "Dedicated Hosting US", content, dedicatedUs });
 });
 
 app.get("/data-center", (req, res) => {
