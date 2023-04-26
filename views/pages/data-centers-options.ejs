@@ -6,29 +6,46 @@
     <body>
 
         <%- include('../partials/header'); %>
-        <main class="py-25 bg-default-2">
-            <div class="container">
-        
-                <div class="row justify-content-start">
-                    <div class="col-md-8 col-12">
-                        <div class="">
-                            <p style="color: #079d63;"
-                                class="eyebrow content-text-author_eyebrow">
-                                Data Centers
-                            </p>
-                            <%- include('../partials/text-data-center-us') %>
-                           
-                            </p>
-                            <a class="second-pricing-table-button text-center"
-                                href="/order-now">Get started now</a>
-        
+            <main class="py-25 bg-default-2">
+                <div class="container">
+
+                    <div class="row justify-content-start">
+                        <div class="col-md-8 col-12">
+                            <div class="">
+                                <p style="color: #079d63;" class="eyebrow content-text-author_eyebrow">
+                                    Data Centers
+                                </p>
+                                <% if(locals.page==='us' ) { %>
+                                    <%- include('../partials/text-data-center-us') %>
+                                        <% }%>
+                                            <% if(locals.page==='au' ) { %>
+                                                <%- include('../partials/text-data-center-au') %>
+                                                    <% }%>
+                                                        <% if(locals.page==='uk' ) { %>
+                                                            <%- include('../partials/text-data-center-uk') %>
+                                                                <% }%>
+                                                                    <% if(locals.page==='fi' ) { %>
+                                                                        <%- include('../partials/text-data-center-fi')
+                                                                            %>
+                                                                            <% }%>
+                                                                                <% if(locals.page==='bg' ) { %>
+                                                                                    <%- include('../partials/text-data-center-bg')
+                                                                                        %>
+                                                                                        <% }%>
+
+
+                                                                                            </p>
+                                                                                            <a class="second-pricing-table-button text-center"
+                                                                                                href="/order-now">Get
+                                                                                                started now</a>
+
+                            </div>
                         </div>
                     </div>
+
                 </div>
-        
-            </div>
-        </main>
-        <%- include('../partials/footer') %>
+            </main>
+            <%- include('../partials/footer') %>
     </body>
 
 </html>

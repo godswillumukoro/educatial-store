@@ -23,130 +23,152 @@
 
 <div id="coodiv-header" class="d-flex mx-auto flex-column moon-edition homepage">
 
-    <div class="bg_overlay_header">
-        <div id="particles-bg"></div>
-        <div class="cloud-bg"></div>
-        <% if (locals.headerImage) { %>
-            <div class="bg-img-header-new-moon">&nbsp;</div>
-            <% } %>
-                <span class="header-shapes shape-03"></span>
-    </div>
-
-    <nav id="coodiv-navbar-header" class="navbar navbar-expand-md fixed-header-layout">
-        <div class="container main-header-coodiv-s">
-            <a class="navbar-brand" href="/">
-                <img class="w-logo" src="img/logo.png" alt="Educloud logo" />
-                <img class="b-logo" src="img/logo.png" alt="Educloud logo" />
-            </a>
-            <button class="navbar-toggle offcanvas-toggle menu-btn-span-bar ml-auto" data-toggle="offcanvas"
-                data-target="#offcanvas-menu-home">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <div class="collapse navbar-collapse navbar-offcanvas" id="offcanvas-menu-home">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item megamenu dropdown"><a class="nav-link" href="/">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="/shared-hosting"  role="button"
-                            id="header-help-drop-down" aria-haspopup="true" aria-expanded="false">Shared Plans<span
-                                class="sr-only">(current)</span></a>
-                        <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
-                            aria-labelledby="header-help-drop-down">
-                            <div class="dropdown-menu-wrapper min-padding">
-                                <li><a class="dropdown-item" href="/shared-hosting-UK">Web hosting in UK</a></li>
-                                <li><a class="dropdown-item" href="/shared-hosting-US">Web hosting in US</a></li>
-                                <li><a class="dropdown-item" href="/shared-hosting-AU">Web hosting in Australia</a></li>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="/domain-names"  role="button" id="header-help-drop-down"
-                            aria-haspopup="true" aria-expanded="false">Domain Names<span
-                                class="sr-only">(current)</span></a>
-                        <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
-                            aria-labelledby="header-help-drop-down">
-                            <div class="dropdown-menu-wrapper min-padding">
-                                <li><a class="dropdown-item" href="/domain-registration">Domain Registration</a></li>
-                                <li><a class="dropdown-item" href="/tld-information">TLD Information</a></li>
-                                <li><a class="dropdown-item" href="/whois-id-protection">WHOIS ID Protection</a></li>
-                                <li><a class="dropdown-item" href="/ssl-certificates">SSL Certificates</a></li>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="/vps-hosting"  role="button" id="header-help-drop-down"
-                            aria-haspopup="true" aria-expanded="false">VPS Hosting<span
-                                class="sr-only">(current)</span></a>
-                        <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
-                            aria-labelledby="header-help-drop-down">
-                            <div class="dropdown-menu-wrapper min-padding">
-                                <li><a class="dropdown-item" href="/openvz-vps-hosting">OpenVZ VPS Hosting</a></li>
-                                <li><a class="dropdown-item" href="/kvm-vps-hosting">KVM VPS Hosting</a></li>
-                                <li><a class="dropdown-item" href="/vps-hosting-AU">VPS Hosting in Australia</a></li>
-                                <li><a class="dropdown-item" href="/vps-hosting-UK">VPS Hosting in UK</a></li>
-                                <li><a class="dropdown-item" href="/vps-hosting-US">VPS Hosting in US</a></li>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="/dedicated-hosting"  role="button" id="header-help-drop-down"
-                            aria-haspopup="true" aria-expanded="false">Dedicated Hosting<span
-                                class="sr-only">(current)</span></a>
-                        <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
-                            aria-labelledby="header-help-drop-down">
-                            <div class="dropdown-menu-wrapper min-padding">
-                                <li><a class="dropdown-item" href="/semi-dedicated-hosting">Semi-dedicated Hosting</a>
-                                </li>
-                                <li><a class="dropdown-item" href="/dedicated-hosting-US">Dedicated Hosting in US</a>
-                                </li>
-                            </div>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link" href="/data-center"  role="button" id="header-help-drop-down"
-                            aria-haspopup="true" aria-expanded="false">Data Centers<span
-                                class="sr-only">(current)</span></a>
-                        <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
-                            aria-labelledby="header-help-drop-down">
-                            <div class="dropdown-menu-wrapper min-padding">
-                                <li><a class="dropdown-item" href="/data-center-US">US Data Center</a></li>
-                                <li><a class="dropdown-item" href="/data-center-AU">AU Data Center</a></li>
-                                <li><a class="dropdown-item" href="/data-center-UK">UK Data Center</a></li>
-                                <li><a class="dropdown-item" href="/data-center-FI">FI Data Center</a></li>
-                                <li><a class="dropdown-item" href="/data-center-BG">BG Data Center</a></li>
-                            </div>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <ul class="header-user-info-coodiv">
-                <li class="dropdown">
-                    <a role="button" id="header-login-dropdown"  aria-haspopup="true"
-                        aria-expanded="false" href="#">sign in</a>
-
-                    <div class="dropdown-menu coodiv-dropdown-header user-login-dropdown"
-                        aria-labelledby="header-login-dropdown">
-                        <form class="user-login-dropdown-form" action="signin.html" data-form="validate">
-                            <div class="form-group username">
-                                <input type="email" name="username" placeholder="Your Email" class="form-control" />
-                                <i class="fal fa-at"></i>
-                            </div>
-
-                            <div class="form-group password">
-                                <input type="password" name="password" placeholder="Password" class="form-control" />
-                                <i class="fal fa-lock"></i>
-                            </div>
-
-                            <button data-toggle="tooltip" data-placement="left" title="login"
-                                class="user-login-dropdown-form-button" type="submit"><i
-                                    class="fas fa-angle-right"></i></button>
-                            <p class="text-muted text-center"><small>Don't have an account yet? <a
-                                        class="text-dark font-weight-bold" href="#">Signup</a></small></p>
-                        </form>
-                    </div>
-
-                </li>
-            </ul>
+    <% if (locals.title==="Sign in" ) { %>
+        <div class="">
+            <div id=""></div>
+            <div class=""></div>
+            <% if (locals.headerImage) { %>
+                <div class="bg-img-header-new-moon">&nbsp;</div>
+                <% } %>
+                    <span class="header-shapes shape-03"></span>
         </div>
-    </nav>
+        <% } else { %>
+        <div class="bg_overlay_header">
+            <div id="particles-bg"></div>
+            <div class="cloud-bg"></div>
+            <% if (locals.headerImage) { %>
+                <div class="bg-img-header-new-moon">&nbsp;</div>
+                <% } %>
+                    <span class="header-shapes shape-03"></span>
+        </div>
+        <% } %>
+
+            <nav id="coodiv-navbar-header" class="navbar navbar-expand-md fixed-header-layout">
+                <div class="container main-header-coodiv-s">
+                    <a class="navbar-brand" href="/">
+                        <img class="w-logo" src="img/logo.png" alt="Educloud logo" />
+                        <img class="b-logo" src="img/logo.png" alt="Educloud logo" />
+                    </a>
+                    <button class="navbar-toggle offcanvas-toggle menu-btn-span-bar ml-auto" data-toggle="offcanvas"
+                        data-target="#offcanvas-menu-home">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div class="collapse navbar-collapse navbar-offcanvas" id="offcanvas-menu-home">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item megamenu dropdown"><a class="nav-link" href="/">Home</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/shared-hosting" role="button" id="header-help-drop-down"
+                                    aria-haspopup="true" aria-expanded="false">Shared Plans<span
+                                        class="sr-only">(current)</span></a>
+                                <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
+                                    aria-labelledby="header-help-drop-down">
+                                    <div class="dropdown-menu-wrapper min-padding">
+                                        <li><a class="dropdown-item" href="/shared-hosting-UK">Web hosting in UK</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/shared-hosting-US">Web hosting in US</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/shared-hosting-AU">Web hosting in
+                                                Australia</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/domain-names" role="button" id="header-help-drop-down"
+                                    aria-haspopup="true" aria-expanded="false">Domain Names<span
+                                        class="sr-only">(current)</span></a>
+                                <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
+                                    aria-labelledby="header-help-drop-down">
+                                    <div class="dropdown-menu-wrapper min-padding">
+                                        <li><a class="dropdown-item" href="/domain-registration">Domain Registration</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/tld-information">TLD Information</a></li>
+                                        <li><a class="dropdown-item" href="/whois-id-protection">WHOIS ID Protection</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/ssl-certificates">SSL Certificates</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/vps-hosting" role="button" id="header-help-drop-down"
+                                    aria-haspopup="true" aria-expanded="false">VPS Hosting<span
+                                        class="sr-only">(current)</span></a>
+                                <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
+                                    aria-labelledby="header-help-drop-down">
+                                    <div class="dropdown-menu-wrapper min-padding">
+                                        <li><a class="dropdown-item" href="/openvz-vps-hosting">OpenVZ VPS Hosting</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/kvm-vps-hosting">KVM VPS Hosting</a></li>
+                                        <li><a class="dropdown-item" href="/vps-hosting-AU">VPS Hosting in Australia</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/vps-hosting-UK">VPS Hosting in UK</a></li>
+                                        <li><a class="dropdown-item" href="/vps-hosting-US">VPS Hosting in US</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/dedicated-hosting" role="button" id="header-help-drop-down"
+                                    aria-haspopup="true" aria-expanded="false">Dedicated Hosting<span
+                                        class="sr-only">(current)</span></a>
+                                <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
+                                    aria-labelledby="header-help-drop-down">
+                                    <div class="dropdown-menu-wrapper min-padding">
+                                        <li><a class="dropdown-item" href="/semi-dedicated-hosting">Semi-dedicated
+                                                Hosting</a>
+                                        </li>
+                                        <li><a class="dropdown-item" href="/dedicated-hosting-US">Dedicated Hosting in
+                                                US</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link" href="/data-center" role="button" id="header-help-drop-down"
+                                    aria-haspopup="true" aria-expanded="false">Data Centers<span
+                                        class="sr-only">(current)</span></a>
+                                <ul class="dropdown-menu coodiv-menu-dropdown coodiv-dropdown-header"
+                                    aria-labelledby="header-help-drop-down">
+                                    <div class="dropdown-menu-wrapper min-padding">
+                                        <li><a class="dropdown-item" href="/data-center-US">US Data Center</a></li>
+                                        <li><a class="dropdown-item" href="/data-center-AU">AU Data Center</a></li>
+                                        <li><a class="dropdown-item" href="/data-center-UK">UK Data Center</a></li>
+                                        <li><a class="dropdown-item" href="/data-center-FI">FI Data Center</a></li>
+                                        <li><a class="dropdown-item" href="/data-center-BG">BG Data Center</a></li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="header-user-info-coodiv">
+                        <li class="">
+                            <a role="button" id="header-login-dropdown" aria-haspopup="true" aria-expanded="false"
+                                href="/signin">sign in</a>
+
+                            <!-- <div class="dropdown-menu coodiv-dropdown-header user-login-dropdown"
+                                aria-labelledby="header-login-dropdown">
+                                <form class="user-login-dropdown-form" action="signin.html" data-form="validate">
+                                    <div class="form-group username">
+                                        <input type="email" name="username" placeholder="Your Email"
+                                            class="form-control" />
+                                        <i class="fal fa-at"></i>
+                                    </div>
+
+                                    <div class="form-group password">
+                                        <input type="password" name="password" placeholder="Password"
+                                            class="form-control" />
+                                        <i class="fal fa-lock"></i>
+                                    </div>
+
+                                    <button data-toggle="tooltip" data-placement="left" title="login"
+                                        class="user-login-dropdown-form-button" type="submit"><i
+                                            class="fas fa-angle-right"></i></button>
+                                    <p class="text-muted text-center"><small>Don't have an account yet? <a
+                                                class="text-dark font-weight-bold" href="#">Signup</a></small></p>
+                                </form>
+                            </div> -->
+
+                        </li>
+                    </ul>
+                </div>
+            </nav>

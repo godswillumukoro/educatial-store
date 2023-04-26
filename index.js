@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.render("pages/index", { title: "Home", headerImage: true });
 });
 
+app.get("/signin", (req, res) => {
+  res.render("pages/signin", { title: "Sign in", headerImage: false });
+});
+
 app.get("/order-now", (req, res) => {
   res.render("pages/order-now", { title: "Order Now" });
 });
@@ -62,7 +66,7 @@ app.get("/kvm-vps-hosting", (req, res) => {
   res.render("pages/vps-reseller-options", { title: "KVM VPS Hosting", gridSection: true, kvmVpsHosting });
 });
 app.get("/vps-hosting-AU", (req, res) => {
-  res.render("pages/vps-reseller-options", { title: "VPS Hosting in AU", page: "au", vpsHostingAu });
+  res.render("pages/vps-reseller-options", { title: "VPS Hosting in Australia", page: "au", vpsHostingAu });
 });
 app.get("/vps-hosting-UK", (req, res) => {
   res.render("pages/vps-reseller-options", { title: "VPS Hosting UK", page:"uk", vpsHostingUk });
@@ -85,19 +89,19 @@ app.get("/data-center", (req, res) => {
   res.render("pages/data-centers", { title: "Data center" });
 });
 app.get("/data-center-US", (req, res) => {
-  res.render("pages/data-centers-options", { title: "Data center US" });
+  res.render("pages/data-centers-options", { title: "Data center US", page:"us" });
 });
 app.get("/data-center-AU", (req, res) => {
-  res.render("pages/dedicated", { title: "Data center AU" });
+  res.render("pages/data-centers-options", { title: "Data center AU", page:"au" });
 });
 app.get("/data-center-UK", (req, res) => {
-  res.render("pages/dedicated", { title: "Data center UK" });
+  res.render("pages/data-centers-options", { title: "Data center UK", page:"uk" });
 });
 app.get("/data-center-FI", (req, res) => {
-  res.render("pages/dedicated", { title: "Data center FI" });
+  res.render("pages/data-centers-options", { title: "Data center FI", page:"fi" });
 });
 app.get("/data-center-BG", (req, res) => {
-  res.render("pages/dedicated", { title: "Data center BG" });
+  res.render("pages/data-centers-options", { title: "Data center BG", page:"bg" });
 });
 
 app.get("/about", (req, res) => {
