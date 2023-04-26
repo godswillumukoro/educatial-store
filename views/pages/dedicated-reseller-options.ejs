@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <% let srcText=null %>
-    <% if (locals.dedicatedSemi) { srcText=locals.dedicatedSemi } %>
-    <% if (locals.dedicatedUs) { srcText=locals.dedicatedUs } %>
+<% let bootstrapClass=null %>
+    <% if (locals.dedicatedSemi) { srcText=locals.dedicatedSemi;  bootstrapClass='justify-content-center'} %>
+    <% if (locals.dedicatedUs) { srcText=locals.dedicatedUs; bootstrapClass='justify-content-start' } %>
 
         <%- include('../partials/head'); %>
 
@@ -26,7 +27,7 @@
 
                                     </h5>
 
-                                    <div class="row justify-content-start second-pricing-table-container mr-tp-30">
+                                    <div class="row <%= bootstrapClass %> second-pricing-table-container mr-tp-30">
 
                                         <% if (srcText) { %>
                                             <% srcText.table.forEach(column=> { %>
@@ -417,33 +418,34 @@
                                 </div>
                                 <% } %>
 
-                                    <% if(locals.content) { %>
-                                        <main class="py-25 bg-default-2">
-                                            <div class="container">
+                                <% if(locals.page) { %>
+                                    <main class="py-25 bg-default-2">
+                                        <div class="container">
 
-                                                <div class="row justify-content-start">
-                                                    <div class="col-md-8 col-12">
-                                                        <div class="">
-                                                            <p style="color: #079d63;"
-                                                                class="eyebrow content-text-author_eyebrow">
-                                                                VPS Hosting
-                                                            </p>
-                                                            <h5 class="coodiv-text-5 font-weight-bold">
-                                                                <%= content.heading %>
-                                                            </h5>
-                                                            <p>
-                                                                <%= content.paragraph %>
-                                                            </p>
-                                                            <a class="second-pricing-table-button text-center"
-                                                                href="/order-now">Get started now</a>
+                                            <div class="row justify-content-start">
+                                                <div class="col-md-8 col-12">
+                                                    <div class="">
+                                                        <p style="color: #079d63;"
+                                                            class="eyebrow content-text-author_eyebrow">
+                                                            <%= locals.title %>
+                                                        </p>
+                                                        <% if(locals.page==='us' ) { %>
+                                                            <%- include('../partials/text-dedicatedhosting-us')
+                                                                %>
+                                                                <% }%>
 
-                                                        </div>
+                                                                    <a class="second-pricing-table-button text-center"
+                                                                        href="/order-now">Get
+                                                                        started
+                                                                        now</a>
+
                                                     </div>
                                                 </div>
-
                                             </div>
-                                        </main>
-                                        <% } %>
+
+                                        </div>
+                                    </main>
+                                    <% }%>
 
                                             <section class="pt-20">
                                                 <div class="container">

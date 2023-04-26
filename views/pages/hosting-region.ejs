@@ -20,10 +20,11 @@
                     <div class="tab-content" id="homepageservicesContent">
                         <div class="tab-pane fade show active" id="hosting" role="tabpanel"
                             aria-labelledby="hosting-tab">
-                            <h5 class="title-default-coodiv-two"><%= location %> Web Hosting Packages
-                                <span>Get
-                                    faster sites — up to nearly 40% average improvement in overall server response
-                                    times.</span>
+                            <h5 class="title-default-coodiv-two">
+                                <%= location %> Web Hosting Packages
+                                    <span>Get
+                                        faster sites — up to nearly 40% average improvement in overall server response
+                                        times.</span>
                             </h5>
 
                             <!-- <div class="row justify-content-center">
@@ -471,28 +472,41 @@
 
             </section>
 
-            <main class="py-25 bg-default-2">
-                <div class="container">
+            <% if(locals.location) { %>
+                <main class="py-25 bg-default-2">
+                    <div class="container">
 
-                    <div class="row justify-content-start">
-                        <div class="col-md-8 col-12">
-                            <div class="">
-                                <p style="color: #079d63;" class="eyebrow content-text-author_eyebrow">Shared Hosting
-                                </p>
-                                <h5 class="coodiv-text-5 font-weight-bold"><%= content.heading %></h5>
-                                <p><%- content.paragraph %></p>
-                                <p><%- content.paragraph %></p>
-                                <p><%- content.paragraph %></p>
-                                <a class="second-pricing-table-button text-center" href="/order-now">Get started now</a>
+                        <div class="row justify-content-start">
+                            <div class="col-md-8 col-12">
+                                <div class="">
+                                    <p style="color: #079d63;" class="eyebrow content-text-author_eyebrow">
+                                        Shared Hosting
+                                    </p>
+                                    <% if(locals.location==='UK' ) { %>
+                                        <%- include('../partials/text-sharedhosting-uk') %>
+                                            <% }%>
 
+                                                <% if(locals.location==='US' ) { %>
+                                                    <%- include('../partials/text-sharedhosting-us') %>
+                                                        <% }%>
+
+                                                            <% if(locals.location==='Australia' ) { %>
+                                                                <%- include('../partials/text-sharedhosting-au') %>
+                                                                    <% }%>
+
+                                                                        <a class="second-pricing-table-button text-center"
+                                                                            href="/order-now">Get started
+                                                                            now</a>
+
+                                </div>
                             </div>
                         </div>
+
                     </div>
+                </main>
+                <% }%>
 
-                </div>
-            </main>
-
-            <%- include('../partials/footer') %>
+                    <%- include('../partials/footer') %>
     </body>
 
 </html>
