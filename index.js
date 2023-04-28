@@ -108,16 +108,16 @@ app.get("/about", (req, res) => {
   res.render("pages/about", { title: "About" });
 });
 app.get("/why-us", (req, res) => {
-  res.render("pages/about", { title: "Why us" });
+  res.render("pages/why-us", { title: "Why us" });
 });
 app.get("/contact", (req, res) => {
   res.render("pages/contact", { title: "Contact" });
 });
 app.get("/customer-support", (req, res) => {
-  res.render("pages/knowledgebase", { title: "Customer support" });
+  res.render("pages/support", { title: "Customer support" });
 });
 app.get("/videos", (req, res) => {
-  res.render("pages/help-center", { title: "Videos" });
+  res.render("pages/videos", { title: "Videos" });
 });
 app.get("/terms-and-conditions", (req, res) => {
   res.render("pages/help-center", { title: "Terms and conditions" });
