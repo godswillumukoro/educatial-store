@@ -124,35 +124,35 @@ app.get("/terms-and-conditions", (req, res) => {
 });
 
 app.get("/hespia-cp", (req, res) => {
-  res.render("pages/help-center", { title: "Hespia CP" });
+  res.render("pages/hespia", { title: "Hespia CP" });
 });
 app.get("/hespia-vs-cpanel", (req, res) => {
-  res.render("pages/help-center", { title: "Hespia vs cPanel" });
+  res.render("pages/hespia-vs-cpanel", { title: "Hespia vs cPanel" });
 });
 app.get("/domain-manager", (req, res) => {
-  res.render("pages/help-center", { title: "Domain Manager" });
+  res.render("pages/domain-manager", { title: "Domain Manager" });
 });
 app.get("/file-manager", (req, res) => {
-  res.render("pages/help-center", { title: "File Manager" });
+  res.render("pages/file-manager", { title: "File Manager" });
 });
 app.get("/email-manager", (req, res) => {
-  res.render("pages/help-center", { title: "Email Manager" });
+  res.render("pages/email-manager", { title: "Email Manager" });
 });
 app.get("/web-accelerators", (req, res) => {
-  res.render("pages/help-center", { title: "Web Accelerators" });
+  res.render("pages/web-accelerators", { title: "Web Accelerators" });
 });
 
 app.get("/web-hosting-articles", (req, res) => {
-  res.render("pages/help-center", { title: "Web Hosting Articles" });
+  res.render("pages/hosting-articles", { title: "Web Hosting Articles" });
 });
 app.get("/best-web-hosting", (req, res) => {
-  res.render("pages/help-center", { title: "Best Web Hosting" });
+  res.render("pages/best-web-hosting", { title: "Best Web Hosting" });
 });
 app.get("/domain-web-hosting", (req, res) => {
-  res.render("pages/help-center", { title: "Domain Web Hosting" });
+  res.render("pages/domain-web-hosting", { title: "Domain Web Hosting" });
 });
 app.get("/how-cpanel-hosting-works", (req, res) => {
-  res.render("pages/help-center", { title: "How cPanel Hosting Works" });
+  res.render("pages/how-cpanel-hosting-works", { title: "How cPanel Hosting Works" });
 });
 app.get("/vps-hosting", (req, res) => {
   res.render("pages/help-center", { title: "VPS Hosting" });

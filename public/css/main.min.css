@@ -7034,7 +7034,7 @@ a:hover {
     float: left;
     text-align: center;
     line-height: 60px;
-    background: #ffeb3b;
+    background: #CCDB28;
     font-size: 30px;
     color: #38444a;
     margin-right: 30px;
@@ -7067,7 +7067,7 @@ a:hover {
 }
 
 .help-center-box-link {
-    background: #6068d1;
+    background: #ED7077;
     color: #fff !important;
     width: 40px;
     height: 40px;
@@ -10617,7 +10617,7 @@ table#prices thead tr.price-dsc th.features.banner .banner-servers-box {
 .section_text_graphic_image img {
     -webkit-object-fit: contain;
     object-fit: contain;
-    width: 100%;
+    width: 80%;
     margin: 0 auto;
     display: block;
 }
@@ -12552,8 +12552,15 @@ table.levels-of-managment-table.table-striped tbody tr:nth-of-type(odd) {
     padding: 5px 5px;
 }
 
+a {
+    color: #ED7077;
+}
+a:hover {
+    color: #CCDB28;
+}
+
 .main-header-btn {
-    background-color: #FED317;
+    background-color: #CCDB28;
     color: #111111;
     border-radius: 4px;
     position: relative;
@@ -12568,7 +12575,7 @@ table.levels-of-managment-table.table-striped tbody tr:nth-of-type(odd) {
 }
 
 .main-header-btn:hover {
-    background-color: #f7cc13;
+    background-color: #ED7077;
     color: #111111;
 }
 
