@@ -140,35 +140,29 @@
                             </li>
                         </ul>
                     </div>
+                    <% if(!isAuthenticated) { %>
                     <ul class="header-user-info-coodiv">
+                        <li class="">
+                            <a role="button" id="header-login-dropdown" aria-haspopup="true" aria-expanded="false"
+                                href="/login">sign in</a>
+
+                        </li>
+                    </ul>
+                    <% } else { %>
+                    <ul class="header-user-info-coodiv">
+                        <li class="">
+                            <a role="button" id="header-login-dropdown" aria-haspopup="true" aria-expanded="false"
+                                href="/logout">sign out</a>
+
+                        </li>
+                    </ul>
+                    <% } %>
+                    <!-- <ul class="header-user-info-coodiv">
                         <li class="">
                             <a role="button" id="header-login-dropdown" aria-haspopup="true" aria-expanded="false"
                                 href="/signin">sign in</a>
 
-                            <!-- <div class="dropdown-menu coodiv-dropdown-header user-login-dropdown"
-                                aria-labelledby="header-login-dropdown">
-                                <form class="user-login-dropdown-form" action="signin.html" data-form="validate">
-                                    <div class="form-group username">
-                                        <input type="email" name="username" placeholder="Your Email"
-                                            class="form-control" />
-                                        <i class="fal fa-at"></i>
-                                    </div>
-
-                                    <div class="form-group password">
-                                        <input type="password" name="password" placeholder="Password"
-                                            class="form-control" />
-                                        <i class="fal fa-lock"></i>
-                                    </div>
-
-                                    <button data-toggle="tooltip" data-placement="left" title="login"
-                                        class="user-login-dropdown-form-button" type="submit"><i
-                                            class="fas fa-angle-right"></i></button>
-                                    <p class="text-muted text-center"><small>Don't have an account yet? <a
-                                                class="text-dark font-weight-bold" href="#">Signup</a></small></p>
-                                </form>
-                            </div> -->
-
                         </li>
-                    </ul>
+                    </ul> -->
                 </div>
             </nav>
